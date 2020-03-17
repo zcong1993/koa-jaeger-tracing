@@ -20,7 +20,6 @@ jobs:
       - run:
           name: wait for jaegertracing service
           command: |
-            dockerize -wait udp://localhost:6832 -timeout 1m
             dockerize -wait tcp://localhost:16686 -timeout 1m
       - run:
           name: test
