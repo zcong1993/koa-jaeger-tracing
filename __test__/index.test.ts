@@ -87,6 +87,8 @@ it('should work well', async () => {
   await request.get('/test?throw=1')
   await request.get('/notFound')
 
+  await sleep(500)
+
   const res1 = await axios.get(
     'http://localhost:16686/api/traces?limit=20&lookback=1m&service=jest-test&operation=koa-tracing-mw'
   )
