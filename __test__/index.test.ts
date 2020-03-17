@@ -96,7 +96,6 @@ it('should work well', async () => {
   )
   expect(res2.data.data.length > 0).toBeTruthy()
 
-  await sleep(500)
   server.close()
 })
 
