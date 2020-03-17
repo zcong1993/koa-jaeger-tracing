@@ -12,7 +12,7 @@ export const setSpan = (span: Span) => {
   const ctx = spanCtx.getContext()
   ctx.span = span
 }
-export const newSpanFromCurrent = (name: string, options: SpanOptions) => {
+export const newSpanFromCurrent = (name: string, options?: SpanOptions) => {
   const tracer = getTracer()
   const ctx = spanCtx.getContext()
   const newSpan = tracer.startSpan(name, {

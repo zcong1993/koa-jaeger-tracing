@@ -3,6 +3,7 @@ jobs:
   build:
     docker:
       - image: circleci/node:latest
+      - image: jaegertracing/all-in-one:1.17
     branches:
       ignore: gh-pages
     steps:
@@ -16,6 +17,11 @@ jobs:
           key: dependency-cache-{{ checksum "yarn.lock" }}
           paths:
             - ./node_modules
+      - run:
+          name: wait for jaegertracing service
+          command: |
+            dockerize -wait udp://localhost:6832 -timeout 1m
+            dockerize -wait tcp://localhost:16686 -timeout 1m
       - run:
           name: test
           command: yarn test:cov
