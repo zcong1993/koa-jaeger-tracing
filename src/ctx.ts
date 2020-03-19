@@ -20,7 +20,5 @@ export const newSpanFromCurrent = (name: string, options?: SpanOptions) => {
     ...options
   })
 
-  ctx.span = newSpan
-
   return newSpan
 }
