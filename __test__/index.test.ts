@@ -61,7 +61,7 @@ const createApp = () => {
     })
 
     runAsyncWithSpan('asyncWork', async () => {
-      await sleep(500)
+      await sleep(200)
     })
     await sleep(100)
     const res = await mockHandler(200, 'mockHandler1')
@@ -100,7 +100,7 @@ it('should work well', async () => {
   await request.get('/test?throw=1')
   await request.get('/notFound')
 
-  await sleep(1000)
+  await sleep(2000)
 
   const res1 = await axios.get(
     'http://localhost:16686/api/traces?limit=20&lookback=1m&service=jest-test&operation=koa-tracing-mw'

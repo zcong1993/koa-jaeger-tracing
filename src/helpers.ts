@@ -17,7 +17,7 @@ export const runSyncWithSpan = <T = any>(
     ps = ctx.span
   }
 
-  const span = tracer.startSpan(name, { childOf: parentSpan.context() })
+  const span = tracer.startSpan(name, { childOf: ps.context() })
 
   try {
     return fn()
@@ -41,7 +41,7 @@ export const runAsyncWithSpan = async <T = any>(
     ps = ctx.span
   }
 
-  const span = tracer.startSpan(name, { childOf: parentSpan.context() })
+  const span = tracer.startSpan(name, { childOf: ps.context() })
 
   return fn()
     .catch(err => {
