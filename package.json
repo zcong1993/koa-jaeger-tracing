@@ -1,6 +1,6 @@
 {
   "name": "@zcong/koa-jaeger-tracing",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "out of box jaeger tracing helper package for koa",
   "main": "./dist/index.js",
   "files": [
