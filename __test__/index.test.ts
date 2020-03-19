@@ -2,7 +2,13 @@ import * as Koa from 'koa'
 import * as Router from 'koa-router'
 import * as supertest from 'supertest'
 import axios from 'axios'
-import { setupTracer, newSpanFromCurrent, request } from '../src'
+import {
+  setupTracer,
+  newSpanFromCurrent,
+  request,
+  runSyncWithSpan,
+  runAsyncWithSpan
+} from '../src'
 
 // https://github.com/visionmedia/supertest/issues/520
 afterAll((done: any) => setImmediate(done))
@@ -50,6 +56,13 @@ const createApp = () => {
     if (ctx.query.throw) {
       throw new Error('test error')
     }
+    runSyncWithSpan('syncWork', () => {
+      console.log('sync work')
+    })
+
+    runAsyncWithSpan('asyncWork', async () => {
+      await sleep(500)
+    })
     await sleep(100)
     const res = await mockHandler(200, 'mockHandler1')
     ctx.body = {
