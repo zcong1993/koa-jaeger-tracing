@@ -11,7 +11,7 @@
     "build": "tsc",
     "test": "npm run lint && npm run jest",
     "test:cov": "npm run lint && npm run jest:cov",
-    "lint": "tslint -p .",
+    "lint": "eslint 'src/**/*.ts'",
     "format": "prettier --write '**/*.{ts,json,md}'",
     "jest": "jest --forceExit",
     "jest:cov": "jest --coverage --forceExit",
@@ -35,10 +35,12 @@
     "prettier": "^1.16.4",
     "supertest": "^4.0.2",
     "ts-jest": "^24.0.0",
-    "tslint": "^5.12.1",
-    "tslint-config-airbnb": "^5.11.1",
-    "tslint-config-prettier": "^1.18.0",
-    "typescript": "^3.3.1"
+    "typescript": "^3.3.1",
+    "@typescript-eslint/eslint-plugin": "2.23.0",
+    "@typescript-eslint/parser": "2.23.0",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-import": "^2.20.1"
   },
   "jest": {
     "testEnvironment": "node",
