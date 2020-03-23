@@ -31,7 +31,7 @@
     "jest": "^25.0.0",
     "koa": "^2.11.0",
     "koa-router": "^8.0.8",
-    "lint-staged": "^9.0.0",
+    "lint-staged": "^10.0.0",
     "prettier": "^1.16.4",
     "supertest": "^4.0.2",
     "ts-jest": "^24.0.0",
