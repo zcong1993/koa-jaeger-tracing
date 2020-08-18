@@ -15,7 +15,8 @@
     "format": "prettier --write '**/*.{ts,json,md}'",
     "jest": "jest --forceExit",
     "jest:cov": "jest --coverage --forceExit",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build",
+    "release": "shipjs prepare"
   },
   "types": "./dist/index.d.ts",
   "author": "zcong1993",
@@ -33,6 +34,7 @@
     "koa-router": "^9.0.0",
     "lint-staged": "^10.0.0",
     "prettier": "^2.0.0",
+    "shipjs": "0.20.1",
     "supertest": "^4.0.2",
     "ts-jest": "^26.0.0",
     "typescript": "^3.3.1",
