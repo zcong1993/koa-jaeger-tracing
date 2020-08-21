@@ -72,7 +72,7 @@
   },
   "dependencies": {
     "asyncctx": "^2.0.11",
-    "axios": "^0.19.2",
+    "axios": "^0.20.0",
     "jaeger-client": "^3.17.2",
     "opentracing": "^0.14.4"
   },
