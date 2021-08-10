@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/node:13
+      - image: circleci/node:16
       - image: jaegertracing/all-in-one:1.25
     branches:
       ignore: gh-pages
